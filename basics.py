@@ -252,3 +252,19 @@ validator = DataValidator()
 validator.email_validator("mr.abhishek.y&gmail.com")
 
 validator.get_errors()
+
+
+# Get weather data provided latitutde and longitude as inputs
+
+import requests
+
+def get_weather(latitude, longitude):
+    
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&current=temperature_2m"
+
+    response = requests.get(url)
+    data = response.json()
+    print(f"{data["current"]["temperature_2m"]}°C")
+
+get_weather(12.2958, 76.6394)
+get_weather(12.9629, 77.5775)
