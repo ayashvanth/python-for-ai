@@ -210,3 +210,27 @@ double(2,3)
 double(2,3,4)
 
 
+"""
+list = [1,0,2,3,5,2,0,3,4,6]
+Remove all zeros and append it at the end of the list
+"""
+
+list = [1,0,2,3,5,2,0,3,4,6]
+
+for item in list:
+    if item == 0:
+        list.remove(item)
+        list.append(item)
+
+print(list)
+
+"""
+Create a list 1,2,3,4 using range function
+"""
+
+list = []
+
+for item in range(1,5):
+    list.append(item)
+
+print(list)
