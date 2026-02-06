@@ -194,6 +194,8 @@ colours.remove("yellow") #Error if not found
 colours.discard("yellow") #No Error if not found
 colours.discard("red")
 
+# -------------------- #
+
 """
 I need to define 2 functions with the same name "double". The first function should take only 1 argument and double it. The second function should take 2 arguments and multiply the values and return. If I pass double(2) it should give me 4 and double(2,3) should give me 6. Is it possible in python?
 """
@@ -209,6 +211,7 @@ double(2)
 double(2,3)
 double(2,3,4)
 
+# -------------------- #
 
 """
 list = [1,0,2,3,5,2,0,3,4,6]
@@ -224,6 +227,8 @@ for item in list:
 
 print(list)
 
+# -------------------- #
+
 """
 Create a list 1,2,3,4 using range function
 """
@@ -234,3 +239,22 @@ for item in range(1,5):
     list.append(item)
 
 print(list)
+
+# -------------------- #
+
+class DataValidator:
+    def __init__(self):
+        self.errors = []
+
+    def email_validator(self, email):
+        if "@" not in email:
+            self.errors.append(f"Error: {email}")
+    
+    def get_errors(self):
+        return self.errors
+
+validator = DataValidator()
+
+validator.email_validator("mr.abhishek.y&gmail.com")
+
+validator.get_errors()
