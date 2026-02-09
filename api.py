@@ -1,8 +1,8 @@
 import requests
 
 # We need coordinates to get weather data
-latitude = 48.85   # Paris latitude
-longitude = 2.35   # Paris longitude
+latitude = 48.85  # Paris latitude
+longitude = 2.35  # Paris longitude
 
 # Build the API URL with our parameters
 url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&current=temperature_2m"
@@ -15,15 +15,16 @@ print(data)
 
 data["current"]["temperature_2m"]
 
-
-#Converting it into function
+# Converting it into function
 import requests
+
 
 def get_weather(latitude, longitude):
     url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&current=temperature_2m"
     response = requests.get(url)
     data = response.json()
     return data["current"]["temperature_2m"]
+
 
 paris = get_weather(48.85, 2.35)
 print(paris)
